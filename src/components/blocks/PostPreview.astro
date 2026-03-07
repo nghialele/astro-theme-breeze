@@ -27,7 +27,7 @@ const isNew = !post.data.draft && (post.data.new || (site.features.newPostDays >
   <div>
     <a
       href={`/posts/${post.id}`}
-      class="inline-flex items-center gap-2 text-lg font-semibold text-foreground/80 group-hover:text-primary"
+      class="inline-flex items-center gap-2 text-lg font-semibold text-foreground/80 transition-colors duration-300 group-hover:text-primary"
     >
       <span>{post.data.title}</span>
       {isNew && (
@@ -50,7 +50,7 @@ const isNew = !post.data.draft && (post.data.new || (site.features.newPostDays >
       </a>
     </p>
   </div>
-  <span class="text-border transition-transform group-hover:translate-x-1 group-hover:text-primary">
+  <span class="text-border transition-all duration-300 group-hover:translate-x-1 group-hover:text-primary">
     <Icon name="mdi:arrow-right" />
   </span>
 </article>

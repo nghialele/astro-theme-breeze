@@ -28,9 +28,9 @@ const categoryCounts = allPosts.reduce((acc: Record<string, number>, post) => {
         allCategories.map((cat) => (
           <a
             href={`/categories/${cat.data.slug}`}
-            class="group flex items-center gap-4 rounded-2xl border border-border/50 bg-muted/20 p-5 hover:border-primary/30 hover:bg-card"
+            class="group flex items-center gap-4 rounded-2xl border border-border/50 bg-muted/20 p-5 transition-all duration-300 hover:border-primary/30 hover:bg-card hover:-translate-y-1"
           >
-            <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+            <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary transition-transform duration-300 group-hover:scale-110">
               <Icon name={cat.data.icon} class="h-6 w-6" />
             </div>
             <div class="min-w-0 flex-1">
