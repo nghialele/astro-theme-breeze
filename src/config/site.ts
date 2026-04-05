@@ -71,6 +71,7 @@ const site = {
   },
 
   // --- Tools Page Data ---
+  // Each item can use either `icon` (Iconify name) or `logo` (public path or { light, dark } paths)
   tools: [
     {
       name: "development",
