@@ -35,6 +35,13 @@ const site = {
     { name: "Email", href: "mailto:hello@example.com", icon: "mdi:email" },
   ],
 
+  friendCard: {
+    name: "Breeze",
+    description: "A minimal Astro theme for personal websites",
+    link: "https://your-domain.com",
+    avatar: "https://your-domain.com/logo.svg",
+  },
+
   // --- Homepage Hero ---
   hero: {
     greeting: "👋 Hello, I'm Breeze",
