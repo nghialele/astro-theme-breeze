@@ -1,3 +1,11 @@
+import { PUBLIC_ARTALK_ENABLED, PUBLIC_ARTALK_SERVER } from "astro:env/server";
+
+const artalkServer = PUBLIC_ARTALK_SERVER?.trim() || "";
+const artalkEnabled =
+  PUBLIC_ARTALK_ENABLED === undefined
+    ? Boolean(artalkServer)
+    : PUBLIC_ARTALK_ENABLED;
+
 const site = {
   // --- Site Metadata ---
   meta: {
@@ -47,10 +55,10 @@ const site = {
 
   // --- Comments ---
   comments: {
-    enabled: false,
+    enabled: artalkEnabled,
     provider: "artalk" as const,
     artalk: {
-      server: "https://your-artalk-server.com",
+      server: artalkServer,
     },
   },
 
