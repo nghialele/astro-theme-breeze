@@ -16,14 +16,14 @@ const emailContact = site.social.find((item) =>
 const myInfo = {
   name: site.friendCard.name,
   description: site.friendCard.description,
-  link: site.friendCard.link || Astro.site,
+  link: (site.friendCard.link || Astro.site || Astro.url.origin).toString(),
   avatar: site.friendCard.avatar || site.meta.logo,
 };
 
 const avatarUrl =
   myInfo.avatar.startsWith("http://") || myInfo.avatar.startsWith("https://")
     ? myInfo.avatar
-    : new URL(myInfo.avatar, Astro.site).toString();
+    : new URL(myInfo.avatar, myInfo.link).toString();
 ---
 
 <Layout
@@ -94,13 +94,13 @@ const avatarUrl =
 
         <div class="rounded-2xl border border-border/40 p-5">
           <div class="mb-5 flex items-center gap-4">
-            <Image
-              src={myInfo.avatar}
-              width={52}
-              height={52}
+            <img
+              src={avatarUrl}
+              width="52"
+              height="52"
               alt={myInfo.name}
-              loading={"lazy"}
-              class="rounded-xl bg-muted"
+              loading="lazy"
+              class="rounded-xl bg-muted object-cover"
             />
             <div class="min-w-0">
               <h3 class="text-base font-bold text-foreground/85">
